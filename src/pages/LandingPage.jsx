@@ -1,7 +1,7 @@
 import { styled } from '@mui/material/styles';
 import { Container, Grid, Paper, Typography } from '@mui/material'
-import React, { useState } from 'react';
-import axios from 'axios';
+import React from 'react';
+
 import AppBars from '../components/Dashboard/AppBar/AppBar'
 import AppoinmentCard from '../components/Dashboard/card/AppoinmentCard';
 import StartAppoinmentCard from '../components/Dashboard/card/StartAppoinmentCard';
@@ -15,7 +15,6 @@ import UpcommingAppoinment from '../components/Dashboard/card/UpcommingAppoinmen
 import QuoteCarousal from '../components/Dashboard/Carousal/QuoteCarousal';
 
 const LandingPage = () => {
-    const [jsonData, setJsonData] = useState([]);
     const Item = styled(Paper)(({ theme }) => ({
         backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
         ...theme.typography.body2,
@@ -23,13 +22,6 @@ const LandingPage = () => {
         textAlign: 'center',
         color: theme.palette.text.secondary,
     }));
-    function handleAppoinment() {
-        axios.post("url", "data", "header").then((response) => {
-            console.log(response.data)
-        }).catch((error) => {
-            console.log(error)
-        })
-    }
     return (
         <>
             <AppBars />
