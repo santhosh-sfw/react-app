@@ -1,43 +1,59 @@
-import { Grid, Typography } from '@mui/material'
+import { Grid, Typography, Card } from '@mui/material'
 import React from 'react'
 
 const AppoinmentCard = () => {
     return (
-        <Grid container item xs={6} md={8}>
-            <div>
-                <Typography>
-                    Next Appointment
-                </Typography>
-            </div>
-            <Grid item xs={6} md={6}>
+        <Card style={{
+            backgroundColor: "#bfddff",
+            color: "#042447",
+            borderRadius: '10px',
+            padding: '10px',
+            height: '150px'
+
+        }}>
+            <Grid container item xs={12} md={12}>
                 <div>
-                    <Typography >
-                        22
-                    </Typography>
-                    <Typography>
-                        August,2022
+                    <Typography className="nextAppoinment">
+                        Next Appointment
                     </Typography>
                 </div>
-                <div>
-                    <Typography>
-                        thursday
-                    </Typography>
-                </div>
+                <Grid item xs={12} sm={12} md={12} lg={12} style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center'
+                }}>
+                    <div>
+                        <Typography style={{
+                            fontSize: "2rem", fontWeight: 'bold'
+                        }} >
+                            22
+                        </Typography>
+                        <Typography style={{
+                            fontWeight: 'bold'
+                        }}>
+                            August,2022
+                        </Typography>
+
+                        <Typography>
+                            thursday
+                        </Typography>
+                    </div>
+                    <div>
+                        <Typography style={{
+                            fontSize: "2rem", fontWeight: 'bold'
+                        }} >16:30</Typography>
+                        <Typography>
+                            with Dr.xyz Placeholder
+                        </Typography>
+                        <Typography style={{
+                            fontWeight: 'bold'
+                        }}>
+                            Online                                    </Typography>
+                    </div>
+                </Grid>
 
             </Grid>
-            <Grid item xs={6} md={6}>
-                <div>
-                    <Typography>16:30</Typography>
-                </div>
-                <div>
-                    <Typography>
-                        with Dr.xyz Placeholder
-                    </Typography>
-                    <Typography>
-                        Online                                    </Typography>
-                </div>
-            </Grid>
-        </Grid>
+        </Card>
     )
 }
 

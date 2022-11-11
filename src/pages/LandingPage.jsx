@@ -7,6 +7,12 @@ import AppoinmentCard from '../components/Dashboard/card/AppoinmentCard';
 import StartAppoinmentCard from '../components/Dashboard/card/StartAppoinmentCard';
 import ManageAppoimnet from '../components/Dashboard/card/ManageAppoimnet';
 import ResourceCheckoutCard from '../components/Dashboard/card/ResourceCheckoutCard';
+import VideoCarousal from '../components/Dashboard/Carousal/VideoCarousal';
+import AddCarousal from '../components/Dashboard/Carousal/AddCarousal';
+import TotalAppoinmentCard from '../components/Dashboard/card/TotalAppoinmentCard';
+import SupportCard from '../components/Dashboard/card/SupportCard';
+import UpcommingAppoinment from '../components/Dashboard/card/UpcommingAppoinment';
+import QuoteCarousal from '../components/Dashboard/Carousal/QuoteCarousal';
 
 const LandingPage = () => {
     const Item = styled(Paper)(({ theme }) => ({
@@ -20,10 +26,15 @@ const LandingPage = () => {
     return (
         <>
             <AppBars />
-            <Container fixed>
+            <Container fixed style={{
+                paddingTop: "20px",
+                backgroundColor: '#f8f8f8',
+            }}>
                 <Grid container spacing={2}>
-                    <Grid container item xs={6} md={8}>
-                        <AppoinmentCard />
+                    <Grid container item xs={6} md={8} spacing={2}>
+                        <Grid item xs={6} md={8}>
+                            <AppoinmentCard />
+                        </Grid>
                         <Grid item xs={6} md={4}>
                             <StartAppoinmentCard />
                         </Grid>
@@ -32,29 +43,37 @@ const LandingPage = () => {
                         </Grid> <Grid item xs={6} md={4}>
                             <ResourceCheckoutCard />
                         </Grid> <Grid item xs={6} md={4}>
-                            <Item>xs=4</Item>
+                            <VideoCarousal />
                         </Grid>
                         <Grid item xs={6} md={8}>
-                            <Item>xs=8</Item>
-                        </Grid>
-                        <Grid item xs={6} md={4}>
-                            <Item>xs=4</Item>
+
+                            <AddCarousal />                        </Grid>
+                        <Grid item conatiner xs={6} md={4} spacing={2}>
+                            <Grid item xs={12} md={12}>
+
+
+                                <TotalAppoinmentCard />
+                            </Grid>
+                            <Grid item xs={12} md={12}>
+
+                                <SupportCard />
+                            </Grid>
                         </Grid>
 
                     </Grid>
-                    <Grid container item xs={4}>
+                    <Grid container item xs={4} spacing={2}>
                         <Grid item xs={12} md={12}>
-                            <Item>xs=4</Item>
+                            <UpcommingAppoinment />
                         </Grid>
                         <Grid item xs={12} md={12}>
-                            <Item>xs=4</Item>
-                        </Grid> <Grid item xs={12} md={12}>
-                            <Item>xs=4</Item>
+                            <QuoteCarousal />
                         </Grid>
+                        {/* <Grid item xs={12} md={12}>
+                            <Item>xs=4</Item>
+                        </Grid> */}
                     </Grid>
                 </Grid>
 
-                <div>LandingPage</div>
             </Container>
         </>
     )

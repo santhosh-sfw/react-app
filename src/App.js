@@ -1,21 +1,34 @@
 import logo from './logo.svg';
 import './App.css';
-import { router } from './router/router';
 import { Route, Routes } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
+import IndexRoutes from './router/router';
 
 
 function App() {
-
+  const routes = IndexRoutes.map((route) => {
+    if (route.subRoutes?.length > 0) {
+      return (
+        <Route key={route.path} path={route.path} element={<route.element />}>
+          {route.subRoutes.map((subRoute) => (
+            <Route
+              key={subRoute.path}
+              path={subRoute.path}
+              element={<subRoute.element prop />}
+            />
+          ))}
+        </Route>
+      );
+    }
+    return (
+      <Route key={route.path} path={route.path} element={<route.element />} />
+    );
+  });
   return (
-    // <Routes>
-    //   {
-    //     router.map((route) => {
-    //       return <Route path={route.path} element={route.comp} exact={route.exact} />
-    //     })
-    //   }
-    // </Routes>
-    <LandingPage/>
+    <Routes>
+    {routes}
+    </Routes>
+    // <LandingPage />
   );
 }
 
