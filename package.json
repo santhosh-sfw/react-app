@@ -1,8 +1,10 @@
 {
+  "homepage": "https://santhosh-sfw.github.io/react-app/",
   "name": "cadabams_prototype",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/core": "^7.20.2",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/icons-material": "^5.10.9",
@@ -25,7 +27,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "pre-deploy":"npm run build",
+    "pre-deploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
